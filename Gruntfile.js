@@ -42,11 +42,14 @@ module.exports = function (grunt) {
 
 				}
 			}
+		},
+		concurrent: {
+			dist: ['copy', 'browserify']
 		}
 	});
 
 	require('load-grunt-tasks')(grunt);
 
-	grunt.registerTask('default', ['clean', 'copy', 'browserify', 'connect', 'watch']);
+	grunt.registerTask('default', ['clean', 'concurrent:dist', 'connect', 'watch']);
 
 };
