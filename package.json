@@ -14,6 +14,7 @@
     "load-grunt-tasks": "^0.6.0"
   },
   "devDependencies": {
+    "grunt-html2js": "^0.2.9",
     "grunt-watchify": "^0.1.0"
   },
   "scripts": {
