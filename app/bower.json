@@ -1,0 +1,22 @@
+{
+	"name": "videoplayer",
+	"version": "0.0.0",
+	"authors": [
+		"Florian Herrengt"
+	],
+	"description": "Play a video with comments",
+	"main": "index.html",
+	"keywords": [
+		"video",
+		"player"
+	],
+	"license": "MIT",
+	"private": true,
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	]
+}
