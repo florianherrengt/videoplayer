@@ -4,9 +4,14 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		watch: {
+			configFiles: {
+				files: ['Gruntfile.js', 'config/*.js'],
+				options: {
+					reload: true
+				}
+			},
 			scripts: {
-				files: ['app/**/*.js'],
-				tasks: ['browserify'],
+				files: ['dist/js/main.js'],
 				options: {
 					livereload: true
 				}
@@ -33,23 +38,19 @@ module.exports = function (grunt) {
 
 			}
 		},
-		browserify: {
+		watchify: {
 			dist: {
-				files: {
-					'dist/js/main.js': ['app/app.js'],
-				},
-				options: {
-
-				}
+				src: './app/**/*.js',
+				dest: 'dist/js/main.js'
 			}
 		},
 		concurrent: {
-			dist: ['copy', 'browserify']
+			dist: ['copy']
 		}
 	});
 
 	require('load-grunt-tasks')(grunt);
 
-	grunt.registerTask('default', ['clean', 'concurrent:dist', 'connect', 'watch']);
+	grunt.registerTask('default', ['clean', 'concurrent:dist', 'watchify', 'connect', 'watch']);
 
 };

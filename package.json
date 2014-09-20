@@ -13,7 +13,9 @@
     "grunt": "^0.4.5",
     "load-grunt-tasks": "^0.6.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt-watchify": "^0.1.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
