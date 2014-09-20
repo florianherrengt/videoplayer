@@ -2,4 +2,4 @@ var fnTest = function (str) {
 	return str;
 };
 
-console.log(fnTest('aline'));
+console.log(fnTest('test'));
