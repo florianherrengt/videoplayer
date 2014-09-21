@@ -48,8 +48,12 @@ module.exports = function (grunt) {
 				}
 			},
 			scripts: {
-				files: ['app/**/*'],
+				files: ['app/js/controllers/**/*.js'],
 				tasks: ['copy:scripts']
+			},
+			html: {
+				files: ['app/templates/**/*.tpl.html'],
+				tasks: ['copy:templates']
 			},
 			scriptsDist: {
 				files: ['dist/js/main.js']
@@ -79,12 +83,20 @@ module.exports = function (grunt) {
 				src: 'app/index.html',
 				dest: 'dist/'
 			},
+			templates: {
+				files: [{
+					expand: true, // Enable dynamic expansion.
+					cwd: 'app/templates/', // Src matches are relative to this path.
+					src: ['**/*.tpl.html'], // Actual pattern(s) to match.
+					dest: 'dist/templates'
+				}]
+			},
 			scripts: {
 				files: [{
 					expand: true, // Enable dynamic expansion.
-					cwd: 'app/', // Src matches are relative to this path.
-					src: ['**/*'], // Actual pattern(s) to match.
-					dest: 'tmp/js'
+					cwd: 'app/js/controllers/', // Src matches are relative to this path.
+					src: ['**/*.js'], // Actual pattern(s) to match.
+					dest: 'dist/js/controllers'
 				}]
 			}
 		},
@@ -112,7 +124,7 @@ module.exports = function (grunt) {
 		concurrent: {
 			clean: ['clean:dist', 'clean:tmp'],
 			build: ['copy:index', 'html2js'],
-			dist: ['copy:scripts']
+			dist: ['copy:scripts', 'copy:templates']
 		}
 	});
 
@@ -121,7 +133,8 @@ module.exports = function (grunt) {
 	grunt.registerTask('default', [
 		'concurrent:clean',
 		'concurrent:build',
-		// 'copy:scripts',
+		'copy:templates',
+		'copy:scripts',
 		// 'concurrent:dist',
 		'watchify',
 		'connect',
