@@ -25,9 +25,9 @@ module.exports = function (grunt) {
 						removeScriptTypeAttributes: true,
 						removeStyleLinkTypeAttributes: true
 					},
-					// module: 'VideoPlayer',
+					module: 'VideoPlayer.templates.home',
 					// module: false,
-					singleModule: true
+					// singleModule: true
 					/*
 					module: function (task) {
 						var tplName = task.src[0].split('/').slice(-1)[0].split('.')[0];

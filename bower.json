@@ -1,27 +1,28 @@
 {
-	"name": "videoplayer",
-	"version": "0.0.0",
-	"authors": [
-		"Florian Herrengt"
-	],
-	"description": "Play a video with comments",
-	"main": "index.html",
-	"keywords": [
-		"video",
-		"player"
-	],
-	"license": "MIT",
-	"private": true,
-	"directory": "app/lib/",
-	"ignore": [
-		"**/.*",
-		"node_modules",
-		"bower_components",
-		"test",
-		"tests"
-	],
-	"dependencies": {
-		"angular": "~1.2.25",
-		"angular-ui-router": "~0.2.11"
-	}
+  "name": "videoplayer",
+  "version": "0.0.0",
+  "authors": [
+    "Florian Herrengt"
+  ],
+  "description": "Play a video with comments",
+  "main": "index.html",
+  "keywords": [
+    "video",
+    "player"
+  ],
+  "license": "MIT",
+  "private": true,
+  "directory": "app/lib/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.25",
+    "angular-ui-router": "~0.2.11",
+    "oclazyload": "~0.3.7"
+  }
 }
