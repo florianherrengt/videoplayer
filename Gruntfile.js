@@ -55,6 +55,10 @@ module.exports = function (grunt) {
 				files: ['app/templates/**/*.tpl.html'],
 				tasks: ['copy:templates']
 			},
+			index: {
+				files: ['app/index.html'],
+				tasks: ['copy:index']
+			},
 			scriptsDist: {
 				files: ['dist/js/main.js']
 			}
