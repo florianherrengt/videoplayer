@@ -53,7 +53,7 @@ module.exports = function (grunt) {
 			},
 			html: {
 				files: ['app/templates/**/*.tpl.html'],
-				tasks: ['copy:templates']
+				tasks: ['html2js', 'copy:templates']
 			},
 			index: {
 				files: ['app/index.html'],
@@ -98,9 +98,9 @@ module.exports = function (grunt) {
 			scripts: {
 				files: [{
 					expand: true, // Enable dynamic expansion.
-					cwd: 'app/js/controllers/', // Src matches are relative to this path.
+					cwd: 'app/', // Src matches are relative to this path.
 					src: ['**/*.js'], // Actual pattern(s) to match.
-					dest: 'dist/js/controllers'
+					dest: 'dist/'
 				}]
 			}
 		},

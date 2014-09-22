@@ -23,6 +23,7 @@
   "dependencies": {
     "angular": "~1.2.25",
     "angular-ui-router": "~0.2.11",
-    "oclazyload": "~0.3.7"
+    "oclazyload": "~0.3.7",
+    "rsvp": "~3.0.13"
   }
 }

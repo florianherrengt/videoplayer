@@ -1,7 +1,10 @@
 <html ng-app="VideoPlayer">
 <head>
-
-  <script src="js/main.js"></script>
+  <script src="lib/rsvp/rsvp.min.js"></script>
+  <script src="js/basket.full.min.js"></script>
+  <script>
+    basket.require({ url: 'js/main.js', skipCache: true });
+  </script>
 </head>
 <body>
 <div ui-view></div>
